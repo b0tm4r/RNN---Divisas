@@ -23,7 +23,7 @@ from keras.models import load_model
 
 # Prediccion a 14 periodos
 periodos_a_predecir = 14
-valor = 'EUR-JPY'
+valor = 'EUR-USD'
 
 # file path
 dir_path = '/home/ubuntu/Scripts/notebooks/DeepLearningAaZ/RNN/divisas'
@@ -60,6 +60,7 @@ for x in range(0,periodos_a_predecir):
     predicted_stock_price_value =  predicted_stock_price[0][0]
     dataset_total = dataset_total.append( pd.Series([predicted_stock_price_value]), ignore_index=True)
  
+
 # Visualizar los Resultados
 plt.plot(dataset_total[-periodos_a_predecir-1:].values, color = 'blue', label = 'Precio Predicho del {}'.format(valor))
 plt.title("Prediccion con una RNR del valor {}".format(valor))
@@ -68,3 +69,27 @@ plt.ylabel("Precio del {}".format(valor))
 plt.legend()
 plt.savefig(os.path.join(dir_path,'result','{}-prediccion-{}-periodos.jpg'.format(valor,periodos_a_predecir)))
 plt.show()
+
+
+def graficar_red(periodos_grafico,dataset_total, periodos_a_predecir):
+    x = dataset_total[-periodos_a_predecir-1:].values
+    i = periodos_grafico-periodos_a_predecir
+    y = range(i-1,i+periodos_a_predecir)
+    
+    # Visualizar los Resultados
+    plt.plot(dataset_total[-periodos_grafico:-periodos_a_predecir].values, color = 'blue', label = 'Precio del {}'.format(valor))
+    plt.scatter(y,x,s=1,color = 'red', label = 'Precio Predicho del {}'.format(valor))
+    
+    # plt.plot(dataset_total[-periodos_a_predecir-1:].values, color = 'blue', label = 'Precio Predicho del {}'.format(valor))
+    
+    plt.title("Prediccion con una RNR del valor {}".format(valor))
+    plt.xlabel("{} Periodos".format(periodos_grafico))
+    plt.ylabel("Precio del {}".format(valor))
+    plt.legend()
+    plt.savefig(os.path.join(dir_path,'result','{}-prediccion-{}-{}-periodos.jpg'.format(valor,periodos_a_predecir,periodos_grafico)))
+    plt.show()
+
+
+periodos_grafico = [100,20,14]
+for i in periodos_grafico:
+    graficar_red(i,dataset_total,periodos_a_predecir)

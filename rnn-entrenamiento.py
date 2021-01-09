@@ -23,7 +23,7 @@ import matplotlib.pyplot as plt
 periodos = 60 # numero de periodos para testar
 
 dir_path = '/home/ubuntu/Scripts/notebooks/DeepLearningAaZ/RNN/divisas'
-valor = 'EUR-JPY'
+valor = 'EUR-USD'
 
 # Importar el dataset de entrenamiento
 dataset_train = pd.read_csv(os.path.join(dir_path,'datasets',"{}.csv".format(valor)))
