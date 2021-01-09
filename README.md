@@ -5,7 +5,7 @@
 
 Si al realizar el load_model nos tira el siguiente error:
 
-KeyError: 'sample_weight_mode' #14040
+`KeyError: 'sample_weight_mode'`
 
 Sustituir `from keras.models import load_model` por `from tensorflow.keras.models import load_model` 
 
