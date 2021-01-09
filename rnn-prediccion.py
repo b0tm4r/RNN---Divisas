@@ -5,6 +5,10 @@
 Created on Sat Jan  4 19:32:12 2020
 
 @author: juangabriel
+
+Modify on Sat Jan  9 20:45:44 2021
+
+@author: b0tm4r
 """
 
 # Parte 1 - Preprocesado de los datos
