@@ -3,7 +3,6 @@
 '''
 __author__ = "b0tm4r"
 __credits__ = ["https://github.com/joanby - Juan Gabriel Gomila"]
-__license__ = "GPL"
 __version__ = "1.0.1"
 __maintainer__ = "b0tm4r"
 __email__ = "b0tm4r@gmail.com"
