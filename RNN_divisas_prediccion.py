@@ -1,5 +1,17 @@
 # -*- coding: utf-8 -*-
 
+'''
+__author__ = "b0tm4r"
+__credits__ = ["https://github.com/joanby - Juan Gabriel Gomila"]
+__version__ = "1.0.1"
+__maintainer__ = "b0tm4r"
+__email__ = "b0tm4r@gmail.com"
+__status__ = "Testing"
+
+Basado en https://github.com/joanby/deeplearning-az/blob/master/datasets/Part%203%20-%20Recurrent%20Neural%20Networks%20(RNN)/rnn.py
+
+'''
+
 ## Importar librerías
 import os
 import numpy as np
